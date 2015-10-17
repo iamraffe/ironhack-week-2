@@ -19,7 +19,11 @@ class Engine
 	end
 end
 
-class SadEngine < Engine
+class SadEngine
+	def initialize(noise)
+		@noise = noise
+	end
+
 	def make_noise
 		"#{@noise} #{@noise}"
 	end
