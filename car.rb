@@ -9,6 +9,12 @@ class Car
 	end
 end
 
+class Vehicle
+	def initialize(noise, wheels)
+		@wheels = wheels
+	end
+end
+
 class Engine
 	def initialize(noise)
 		@noise = noise
@@ -40,11 +46,11 @@ class RandomEngine
 end
 
 
-car = Car.new("Broom", Engine.new("fishum"))
-sad_car = Car.new("mimimimimi", SadEngine.new("*cryes*"))
-random_car = Car.new("I'm so random, try me", RandomEngine.new(["pshhh", "splat"]))
-car.make_noise
+# car = Car.new("Broom", Engine.new("fishum"))
+# sad_car = Car.new("mimimimimi", SadEngine.new("*cryes*"))
+# random_car = Car.new("I'm so random, try me", RandomEngine.new(["pshhh", "splat"]))
+# car.make_noise
 
-sad_car.make_noise
+# sad_car.make_noise
 
-random_car.make_noise
+# random_car.make_noise
