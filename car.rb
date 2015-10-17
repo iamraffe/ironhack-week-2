@@ -10,21 +10,37 @@ class Car
 end
 
 class Engine
+	def initialize(noise)
+		@noise = noise
+	end
+
 	def make_noise
-		"fishum fishum"
+		@noise
 	end
 end
 
-class SadEngine
+class SadEngine < Engine
 	def make_noise
-		"*cryes*"
+		"#{@noise} #{@noise}"
+	end
+end
+
+class RandomEngine 
+	def initialize(random_noises = ["Vrum", "chipaow", "slat pat"])
+		@noise = random_noises
+	end
+
+	def make_noise
+		@noise.sample
 	end
 end
 
 
-car = Car.new("Broom", Engine.new)
-sad_car = Car.new("mimimimimi", SadEngine.new)
-
-# car.make_noise
+car = Car.new("Broom", Engine.new("fishum"))
+sad_car = Car.new("mimimimimi", SadEngine.new("*cryes*"))
+random_car = Car.new("I'm so random, try me", RandomEngine.new(["pshhh", "splat"]))
+car.make_noise
 
 sad_car.make_noise
+
+random_car.make_noise
